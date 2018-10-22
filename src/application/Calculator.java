@@ -19,6 +19,7 @@ public class Calculator {
 		this.widerstand = widerstand;
 	}
 	
+	
 	public double getLeistung() {
 		return leistung;
 	}
@@ -49,7 +50,16 @@ public class Calculator {
 		 */
 	}
 	
-	/* Hier die Methoden mit den Formlen hinzufügen
+	/**
+	 * 
+	 * @param u
+	 * @param i
+	 * @return
 	 */
+	public double pFromUAndI(double u, double i) {
+		return u*i;
+	}
+	
+
 	
 }
