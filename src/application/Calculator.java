@@ -77,5 +77,19 @@ public class Calculator {
 		}
 		return Math.sqrt(p/r);
 	}
-	
+
+	/**
+	 * Calculate I=U/R
+	 * @param u Tension
+	 * @param r Resistance
+	 * @return  Current
+	 * @throws IllegalArgumentException
+	 */
+	private double iFromUandR(double u, double r) throws IllegalArgumentException {
+		if (r==0.0){
+			throw new IllegalArgumentException("Argument 'Resistance' is 0");
+		}
+		return u/r;
+	}
+		
 }
