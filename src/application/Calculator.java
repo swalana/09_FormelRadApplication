@@ -50,7 +50,9 @@ public class Calculator {
 	}
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
+	
 	public void voltage_R_I(double wiederstand, double strom) {
+		
 		
 	}
 	public void voltage_P_I(double leistung, double strom) {
