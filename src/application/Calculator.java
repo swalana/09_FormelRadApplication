@@ -3,7 +3,7 @@ package application;
 /**
  * Berechnet das Formelrad
  * 
- * @author Peter Rutschmann
+ * @author Peter Rutschmann, Joel Wäger, Sara Ott
  * @version 13.09.2018
  */
 public class Calculator {
