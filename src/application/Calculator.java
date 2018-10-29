@@ -49,7 +49,16 @@ public class Calculator {
 		 */
 	}
 	
-	/* Hier die Methoden mit den Formlen hinzufügen
+	/* Calculate I=P/U
+	 * @param p Power
+	 * @param u Tension
+	 * @return  Current
+	 * @throws IllegalArgumentException
 	 */
-	
+	private double iFromPandU(double p, double u) throws IllegalArgumentException {
+		if (u==0.0){
+			throw new IllegalArgumentException("Argument 'Tension' is 0");
+		}
+		return p/u;
+	}
 }
