@@ -61,4 +61,21 @@ public class Calculator {
 		}
 		return p/u;
 	}
+
+	/**
+	 * Calcluate I=SQRT(P/R)
+	 * @param p Power
+	 * @param r Resistance
+	 * @return  Current
+	 * @throws IllegalArgumentException
+	 */
+	private double iFromPandR(double p, double r) throws IllegalArgumentException {
+		if (r==0.0){
+			throw new IllegalArgumentException("Argument 'Resistance' is 0");
+		} else if ((p/r)<0.0){
+			throw new IllegalArgumentException("Argument 'Power/Resistance' is < 0");
+		}
+		return Math.sqrt(p/r);
+	}
+	
 }
