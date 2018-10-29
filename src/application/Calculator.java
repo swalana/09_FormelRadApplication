@@ -83,4 +83,14 @@ public class Calculator {
 		return r * i * i;
 	}
 
+	/**
+	 * calculate u from i and r
+	 * @param i
+	 * @param r
+	 * @return
+	 */
+	private double uFromIAndR(double i, double r) {
+		return i*r;
+	}
+	
 }
