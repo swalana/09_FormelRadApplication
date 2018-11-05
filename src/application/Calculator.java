@@ -121,5 +121,47 @@ public class Calculator {
 		return Math.sqrt(p*r);
 	}
 	
-	
+	/* Hier die Methoden mit den Formlen hinzufügen
+	 */
+	/**
+	 * Calculate R=U/I
+	 * @param u Power
+	 * @param i Current
+	 * @return  Resistance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromUAndI(double u, double i) throws IllegalArgumentException {
+		if (i==0.0){
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return u/i;
+	}
+
+	/**
+	 * Calculate R=P/I^2
+	 * @param p Power
+	 * @param i Current
+	 * @return  Resitance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromPAndI(double p, double i) throws IllegalArgumentException {
+		if (i==0.0){
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return p/i/i;
+	}
+
+	/**
+	 * Calculate R=U*U/P
+	 * @param p Power
+	 * @param u Tension
+	 * @return  Resistance
+	 * @throws IllegalArgumentException
+	 */
+	private double rFromPAndU(double p, double u) throws IllegalArgumentException {
+		if (p==0.0){
+			throw new IllegalArgumentException("Argument 'Power' is 0");
+		}
+		return u*u/p;
+	}	
 }
