@@ -93,4 +93,33 @@ public class Calculator {
 		return i*r;
 	}
 	
+	/**
+	 * calculate u from p and i
+	 * @param p
+	 * @param i
+	 * @return
+	 * @throws IllegalArgumentException
+	 */
+	private double uFromPAndI(double p, double i) throws IllegalArgumentException {
+		if (i==0.0){
+			throw new IllegalArgumentException("Argument 'Current' is 0");
+		}
+		return p/i;
+	}
+	
+	/**
+	 * calculate u from p and r
+	 * @param p
+	 * @param r
+	 * @return
+	 * @throws IllegalArgumentException
+	 */
+	private double uFromPAndR(double p, double r) throws IllegalArgumentException {
+		if ((p*r)<0){
+			throw new IllegalArgumentException("Argument 'Power * Resistance' is < 0");
+		}
+		return Math.sqrt(p*r);
+	}
+	
+	
 }
