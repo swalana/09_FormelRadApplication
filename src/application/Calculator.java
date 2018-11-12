@@ -45,36 +45,54 @@ public class Calculator {
 	public void calculate() {
 
 		int choosenFields = 0;
-		
+
+		if (leistung != 0.0) {
+			choosenFields++;
+		}
+		if (spannung != 0.0) {
+			choosenFields++;
+		}
+		if (widerstand != 0.0) {
+			choosenFields++;
+		}
+		if (strom != 0.0) {
+			choosenFields++;
+		}
+
 		// select the right method
-		if (leistung != 0.0 && spannung != 0.0) {
-			strom = iFromPandU(leistung, spannung);
-			widerstand = rFromPAndU(leistung, spannung);
-		}
+		if (choosenFields == 2) {
+			
+			if (leistung != 0.0 && spannung != 0.0) {
+				strom = iFromPandU(leistung, spannung);
+				widerstand = rFromPAndU(leistung, spannung);
+			}
 
-		if (leistung != 0.0 && strom != 0.0) {
-			spannung = uFromPAndI(leistung, strom);
-			widerstand = rFromPAndI(leistung, strom);
-		}
+			if (leistung != 0.0 && strom != 0.0) {
+				spannung = uFromPAndI(leistung, strom);
+				widerstand = rFromPAndI(leistung, strom);
+			}
 
-		if (leistung != 0.0 && widerstand != 0.0) {
-			spannung = uFromPAndR(leistung, widerstand);
-			strom = iFromPandR(leistung, widerstand);
-		}
+			if (leistung != 0.0 && widerstand != 0.0) {
+				spannung = uFromPAndR(leistung, widerstand);
+				strom = iFromPandR(leistung, widerstand);
+			}
 
-		if (spannung != 0.0 && strom != 0.0) {
-			leistung = pFromUAndI(spannung, strom);
-			widerstand = rFromUAndI(spannung, strom);
-		}
+			if (spannung != 0.0 && strom != 0.0) {
+				leistung = pFromUAndI(spannung, strom);
+				widerstand = rFromUAndI(spannung, strom);
+			}
 
-		if (spannung != 0.0 && widerstand != 0.0) {
-			leistung = pFromUAndR(spannung, widerstand);
-			strom = iFromUandR(spannung, widerstand);
-		}
+			if (spannung != 0.0 && widerstand != 0.0) {
+				leistung = pFromUAndR(spannung, widerstand);
+				strom = iFromUandR(spannung, widerstand);
+			}
 
-		if (strom != 0.0 && widerstand != 0.0) {
-			leistung = pFromIAndR(strom, widerstand);
-			spannung = uFromIAndR(strom, widerstand);
+			if (strom != 0.0 && widerstand != 0.0) {
+				leistung = pFromIAndR(strom, widerstand);
+				spannung = uFromIAndR(strom, widerstand);
+			}
+		} else {
+			System.out.println("Bitte genau 2 Felder selektieren");
 		}
 //		
 //		if (leistung != 0.0) {
@@ -102,7 +120,7 @@ public class Calculator {
 //				spannung = uFromIAndR(strom, widerstand);
 	}
 
-	//}}
+	// }}
 
 	/**
 	 * calculate p from i and u
