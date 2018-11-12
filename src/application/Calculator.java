@@ -61,7 +61,7 @@ public class Calculator {
 
 		// select the right method
 		if (choosenFields == 2) {
-			
+
 			if (leistung != 0.0 && spannung != 0.0) {
 				strom = iFromPandU(leistung, spannung);
 				widerstand = rFromPAndU(leistung, spannung);
@@ -94,33 +94,7 @@ public class Calculator {
 		} else {
 			System.out.println("Bitte genau 2 Felder selektieren");
 		}
-//		
-//		if (leistung != 0.0) {
-//			if (spannung != 0.0) {
-//				strom = iFromPandU(leistung, spannung);
-//				widerstand = rFromPAndU(leistung, spannung);
-//			} else if (strom != 0.0) {
-//				spannung = uFromPAndI(leistung, strom);
-//				widerstand = rFromPAndI(leistung, strom);
-//			} else if (widerstand != 0.0) {
-//				spannung = uFromPAndR(leistung, widerstand);
-//				strom = iFromPandR(leistung, widerstand);
-//			}
-//		} else if (spannung != 0.0) {
-//			if (strom != 0.0) {
-//				leistung = pFromUAndI(spannung, strom);
-//				widerstand = rFromUAndI(spannung, strom);
-//			} else if (widerstand != 0.0) {
-//				leistung = pFromUAndR(spannung, widerstand);
-//				strom = iFromUandR(spannung, widerstand);
-//			}
-//		} else if (strom != 0.0) {
-//			if (widerstand != 0.0) {
-//				leistung = pFromIAndR(strom, widerstand);
-//				spannung = uFromIAndR(strom, widerstand);
 	}
-
-	// }}
 
 	/**
 	 * calculate p from i and u
