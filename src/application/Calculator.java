@@ -1,5 +1,8 @@
 package application;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+
 /**
  * Berechnet das Formelrad
  * 
@@ -92,7 +95,11 @@ public class Calculator {
 				spannung = uFromIAndR(strom, widerstand);
 			}
 		} else {
-			System.out.println("Bitte genau 2 Felder selektieren");
+
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.setTitle("Falsche Feldselektion");
+			alert.setContentText("Bitte genau 2 Felder selektieren!");
+			alert.showAndWait();
 		}
 	}
 
