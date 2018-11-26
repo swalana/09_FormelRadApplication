@@ -100,9 +100,9 @@ public class Calculator {
 	 * @param i
 	 * @return
 	 */
-	public double pFromUAndI(double u, double i) {
+	public void pFromUAndI(double u, double i) {
 		System.out.println("calculate p from i and u");
-		return i * u;
+		this.leistung =  i * u;
 	}
 
 	/**
@@ -113,12 +113,12 @@ public class Calculator {
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	public double pFromUAndR(double u, double r) throws IllegalArgumentException {
+	public void pFromUAndR(double u, double r) throws IllegalArgumentException {
 		if (r == 0) {
 			throw new IllegalArgumentException("Resistence is 0.");
 		}
 		System.out.println("calculate p from u and r");
-		return u * u / r;
+		this.leistung = u * u / r;
 	}
 
 	/**
@@ -128,9 +128,9 @@ public class Calculator {
 	 * @param r
 	 * @return
 	 */
-	public double pFromIAndR(double i, double r) {
+	public void pFromIAndR(double i, double r) {
 		System.out.println("calculate p from i and r");
-		return r * i * i;
+		this.leistung = r * i * i;
 	}
 
 	/**
@@ -140,9 +140,9 @@ public class Calculator {
 	 * @param r
 	 * @return
 	 */
-	private double uFromIAndR(double i, double r) {
+	private void uFromIAndR(double i, double r) {
 		System.out.println("calculate u from i and r");
-		return i * r;
+		this.spannung = i * r;
 	}
 
 	/**
@@ -153,12 +153,12 @@ public class Calculator {
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	private double uFromPAndI(double p, double i) throws IllegalArgumentException {
+	private void uFromPAndI(double p, double i) throws IllegalArgumentException {
 		if (i == 0.0) {
 			throw new IllegalArgumentException("Argument 'Current' is 0");
 		}
 		System.out.println("calculate u from p and i");
-		return p / i;
+		this.spannung = p / i;
 	}
 
 	/**
@@ -169,12 +169,12 @@ public class Calculator {
 	 * @return
 	 * @throws IllegalArgumentException
 	 */
-	private double uFromPAndR(double p, double r) throws IllegalArgumentException {
+	private void uFromPAndR(double p, double r) throws IllegalArgumentException {
 		if ((p * r) < 0) {
 			throw new IllegalArgumentException("Argument 'Power * Resistance' is < 0");
 		}
 		System.out.println("calculate u from p and r");
-		return Math.sqrt(p * r);
+		this.spannung = Math.sqrt(p * r);
 	}
 
 	/**
@@ -185,12 +185,12 @@ public class Calculator {
 	 * @return Resistance
 	 * @throws IllegalArgumentException
 	 */
-	private double rFromUAndI(double u, double i) throws IllegalArgumentException {
+	private void rFromUAndI(double u, double i) throws IllegalArgumentException {
 		if (i == 0.0) {
 			throw new IllegalArgumentException("Argument 'Current' is 0");
 		}
 		System.out.println("Calculate R from U and I");
-		return u / i;
+		this.widerstand = u / i;
 	}
 
 	/**
@@ -201,12 +201,12 @@ public class Calculator {
 	 * @return Resitance
 	 * @throws IllegalArgumentException
 	 */
-	private double rFromPAndI(double p, double i) throws IllegalArgumentException {
+	private void rFromPAndI(double p, double i) throws IllegalArgumentException {
 		if (i == 0.0) {
 			throw new IllegalArgumentException("Argument 'Current' is 0");
 		}
 		System.out.println("Calculate R from P and I");
-		return p / i / i;
+		this.widerstand = p / i / i;
 	}
 
 	/**
@@ -217,12 +217,12 @@ public class Calculator {
 	 * @return Resistance
 	 * @throws IllegalArgumentException
 	 */
-	private double rFromPAndU(double p, double u) throws IllegalArgumentException {
+	private void rFromPAndU(double p, double u) throws IllegalArgumentException {
 		if (p == 0.0) {
 			throw new IllegalArgumentException("Argument 'Power' is 0");
 		}
 		System.out.println("Calculate R from U and P");
-		return u * u / p;
+		this.widerstand = u * u / p;
 	}
 
 	/**
@@ -233,12 +233,12 @@ public class Calculator {
 	 * @return Current
 	 * @throws IllegalArgumentException
 	 */
-	private double iFromPandU(double p, double u) throws IllegalArgumentException {
+	private void iFromPandU(double p, double u) throws IllegalArgumentException {
 		if (u == 0.0) {
 			throw new IllegalArgumentException("Argument 'Tension' is 0");
 		}
 		System.out.println("Calculate I from P and U");
-		return p / u;
+		this.strom = p / u;
 	}
 
 	/**
@@ -249,14 +249,14 @@ public class Calculator {
 	 * @return Current
 	 * @throws IllegalArgumentException
 	 */
-	private double iFromPandR(double p, double r) throws IllegalArgumentException {
+	private void iFromPandR(double p, double r) throws IllegalArgumentException {
 		if (r == 0.0) {
 			throw new IllegalArgumentException("Argument 'Resistance' is 0");
 		} else if ((p / r) < 0.0) {
 			throw new IllegalArgumentException("Argument 'Power/Resistance' is < 0");
 		}
 		System.out.println("Calcluate I from P and R");
-		return Math.sqrt(p / r);
+		this.strom = Math.sqrt(p / r);
 	}
 
 	/**
@@ -267,12 +267,12 @@ public class Calculator {
 	 * @return Current
 	 * @throws IllegalArgumentException
 	 */
-	private double iFromUandR(double u, double r) throws IllegalArgumentException {
+	private void iFromUandR(double u, double r) throws IllegalArgumentException {
 		if (r == 0.0) {
 			throw new IllegalArgumentException("Argument 'Resistance' is 0");
 		}
 		System.out.println("calculate i from u and r");
-		return u / r;
+		this.strom = u / r;
 	}
 
 }
