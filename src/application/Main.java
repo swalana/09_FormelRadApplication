@@ -44,7 +44,7 @@ public class Main extends Application {
 			TextField txLeistung = new TextField();
 			txLeistung.relocate(100, 285);
 			txLeistung.setFont(Font.font("Verdana", 15));
-			txLeistung.setStyle("- fx-text-fill = red;");
+			txLeistung.setStyle("-fx-text-fill: red;");
 			root.getChildren().add(txLeistung);
 
 			Label lblSpannung = new Label("Spannung:");
@@ -55,7 +55,7 @@ public class Main extends Application {
 			TextField txSpannung = new TextField();
 			txSpannung.relocate(100, 325);
 			txSpannung.setFont(Font.font("Verdana", 15));
-			txSpannung.setStyle("- fx-text-fill = red;");
+			txSpannung.setStyle("-fx-text-fill: red;");
 			root.getChildren().add(txSpannung);
 
 			Label lblStrom = new Label("Strom:");
@@ -66,7 +66,7 @@ public class Main extends Application {
 			TextField txStrom = new TextField();
 			txStrom.relocate(100, 365);
 			txStrom.setFont(Font.font("Verdana", 15));
-			txStrom.setStyle("- fx-text-fill = red;");
+			txStrom.setStyle("-fx-text-fill: red;");
 			root.getChildren().add(txStrom);
 
 			Label lblWiderstand = new Label("Widerstand:");
@@ -77,7 +77,7 @@ public class Main extends Application {
 			TextField txWiderstand = new TextField();
 			txWiderstand.relocate(100, 405);
 			txWiderstand.setFont(Font.font("Verdana", 15));
-			txWiderstand.setStyle("- fx-text-fill = red;");
+			txWiderstand.setStyle("-fx-text-fill: red;");
 			root.getChildren().add(txWiderstand);
 
 			Button btnBerechnen = new Button();
