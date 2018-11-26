@@ -68,29 +68,19 @@ public class Calculator {
 			if (leistung != 0.0 && spannung != 0.0) {
 				iFromPandU(leistung, spannung);
 				rFromPAndU(leistung, spannung);
-			}
-
-			if (leistung != 0.0 && strom != 0.0) {
+			} else if (leistung != 0.0 && strom != 0.0) {
 				uFromPAndI(leistung, strom);
 				rFromPAndI(leistung, strom);
-			}
-
-			if (leistung != 0.0 && widerstand != 0.0) {
+			} else if (leistung != 0.0 && widerstand != 0.0) {
 				uFromPAndR(leistung, widerstand);
 				iFromPandR(leistung, widerstand);
-			}
-
-			if (spannung != 0.0 && strom != 0.0) {
+			} else if (spannung != 0.0 && strom != 0.0) {
 				pFromUAndI(spannung, strom);
 				rFromUAndI(spannung, strom);
-			}
-
-			if (spannung != 0.0 && widerstand != 0.0) {
+			} else if (spannung != 0.0 && widerstand != 0.0) {
 				pFromUAndR(spannung, widerstand);
 				iFromUandR(spannung, widerstand);
-			}
-
-			if (strom != 0.0 && widerstand != 0.0) {
+			} else if (strom != 0.0 && widerstand != 0.0) {
 				pFromIAndR(strom, widerstand);
 				uFromIAndR(strom, widerstand);
 			}
