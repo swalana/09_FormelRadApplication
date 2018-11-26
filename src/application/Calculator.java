@@ -66,33 +66,33 @@ public class Calculator {
 		if (choosenFields == 2) {
 
 			if (leistung != 0.0 && spannung != 0.0) {
-				strom = iFromPandU(leistung, spannung);
-				widerstand = rFromPAndU(leistung, spannung);
+				iFromPandU(leistung, spannung);
+				rFromPAndU(leistung, spannung);
 			}
 
 			if (leistung != 0.0 && strom != 0.0) {
-				spannung = uFromPAndI(leistung, strom);
-				widerstand = rFromPAndI(leistung, strom);
+				uFromPAndI(leistung, strom);
+				rFromPAndI(leistung, strom);
 			}
 
 			if (leistung != 0.0 && widerstand != 0.0) {
-				spannung = uFromPAndR(leistung, widerstand);
-				strom = iFromPandR(leistung, widerstand);
+				uFromPAndR(leistung, widerstand);
+				iFromPandR(leistung, widerstand);
 			}
 
 			if (spannung != 0.0 && strom != 0.0) {
-				leistung = pFromUAndI(spannung, strom);
-				widerstand = rFromUAndI(spannung, strom);
+				pFromUAndI(spannung, strom);
+				rFromUAndI(spannung, strom);
 			}
 
 			if (spannung != 0.0 && widerstand != 0.0) {
-				leistung = pFromUAndR(spannung, widerstand);
-				strom = iFromUandR(spannung, widerstand);
+				pFromUAndR(spannung, widerstand);
+				iFromUandR(spannung, widerstand);
 			}
 
 			if (strom != 0.0 && widerstand != 0.0) {
-				leistung = pFromIAndR(strom, widerstand);
-				spannung = uFromIAndR(strom, widerstand);
+				pFromIAndR(strom, widerstand);
+				uFromIAndR(strom, widerstand);
 			}
 		} else {
 
