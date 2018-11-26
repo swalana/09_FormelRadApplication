@@ -83,13 +83,36 @@ public class Main extends Application {
 			
 			btnBerechnen.setOnAction(e -> {
 				
-			
-				Calculator myCalculator = new Calculator(
+				double power = 0.0;
+				double tension = 0.0;
+				double current = 0.0;
+				double resistence = 0.0;
 				
-						Double.parseDouble(txLeistung.getText());
-						Double.parseDouble(txSpannung.getText());
-						Double.parseDouble(txStrom.getText());
-						Double.parseDouble(txWiderstand.getText()));
+				if(txLeistung.getText().isEmpty() == false) {
+					txLeistung.setStyle("-fx-text-fill: black;");
+						power = Double.parseDouble(txLeistung.getText());
+					}else {
+						txLeistung.setStyle("-fx-text-fill: red;");
+					}
+					if(txSpannung.getText().isEmpty() == false) {
+						txSpannung.setStyle("-fx-text-fill: black;");
+						 tension = Double.parseDouble(txSpannung.getText());
+					}else {
+						txSpannung.setStyle("-fx-text-fill: red;");
+					}
+					if(txStrom.getText().isEmpty() == false) {
+						txStrom.setStyle("-fx-text-fill: black;");
+						 current = Double.parseDouble(txStrom.getText());
+					}else {
+						txStrom.setStyle("-fx-text-fill: red;");
+					}
+					if(txWiderstand.getText().isEmpty() == false) {
+						txWiderstand.setStyle("-fx-text-fill: black;");	
+						 resistence = Double.parseDouble(txWiderstand.getText());
+					}else {
+						txWiderstand.setStyle("-fx-text-fill: red;");
+					}
+				Calculator myCalculator = new Calculator(power, tension, current, resistence);
 						
 				System.out.print("Vorher:  ");
 				System.out.println(myCalculator.toString());
