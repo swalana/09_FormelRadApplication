@@ -66,33 +66,33 @@ public class Calculator {
 		if (choosenFields == 2) {
 
 			if (leistung != 0.0 && spannung != 0.0) {
-				strom = iFromPandU(leistung, spannung);
-				widerstand = rFromPAndU(leistung, spannung);
+				iFromPandU(leistung, spannung);
+				rFromPAndU(leistung, spannung);
 			}
 
 			if (leistung != 0.0 && strom != 0.0) {
-				spannung = uFromPAndI(leistung, strom);
-				widerstand = rFromPAndI(leistung, strom);
+				uFromPAndI(leistung, strom);
+				rFromPAndI(leistung, strom);
 			}
 
 			if (leistung != 0.0 && widerstand != 0.0) {
-				spannung = uFromPAndR(leistung, widerstand);
-				strom = iFromPandR(leistung, widerstand);
+				uFromPAndR(leistung, widerstand);
+				iFromPandR(leistung, widerstand);
 			}
 
 			if (spannung != 0.0 && strom != 0.0) {
-				leistung = pFromUAndI(spannung, strom);
-				widerstand = rFromUAndI(spannung, strom);
+				pFromUAndI(spannung, strom);
+				rFromUAndI(spannung, strom);
 			}
 
 			if (spannung != 0.0 && widerstand != 0.0) {
-				leistung = pFromUAndR(spannung, widerstand);
-				strom = iFromUandR(spannung, widerstand);
+				pFromUAndR(spannung, widerstand);
+				iFromUandR(spannung, widerstand);
 			}
 
 			if (strom != 0.0 && widerstand != 0.0) {
-				leistung = pFromIAndR(strom, widerstand);
-				spannung = uFromIAndR(strom, widerstand);
+				pFromIAndR(strom, widerstand);
+				uFromIAndR(strom, widerstand);
 			}
 		} else {
 
@@ -111,6 +111,7 @@ public class Calculator {
 	 * @return
 	 */
 	public double pFromUAndI(double u, double i) {
+		System.out.println("calculate p from i and u");
 		return i * u;
 	}
 
@@ -126,6 +127,7 @@ public class Calculator {
 		if (r == 0) {
 			throw new IllegalArgumentException("Resistence is 0.");
 		}
+		System.out.println("calculate p from u and r");
 		return u * u / r;
 	}
 
@@ -137,6 +139,7 @@ public class Calculator {
 	 * @return
 	 */
 	public double pFromIAndR(double i, double r) {
+		System.out.println("calculate p from i and r");
 		return r * i * i;
 	}
 
@@ -148,6 +151,7 @@ public class Calculator {
 	 * @return
 	 */
 	private double uFromIAndR(double i, double r) {
+		System.out.println("calculate u from i and r");
 		return i * r;
 	}
 
@@ -163,6 +167,7 @@ public class Calculator {
 		if (i == 0.0) {
 			throw new IllegalArgumentException("Argument 'Current' is 0");
 		}
+		System.out.println("calculate u from p and i");
 		return p / i;
 	}
 
@@ -178,11 +183,12 @@ public class Calculator {
 		if ((p * r) < 0) {
 			throw new IllegalArgumentException("Argument 'Power * Resistance' is < 0");
 		}
+		System.out.println("calculate u from p and r");
 		return Math.sqrt(p * r);
 	}
 
 	/**
-	 * Calculate R=U/I
+	 * Calculate R from U and I
 	 * 
 	 * @param u Power
 	 * @param i Current
@@ -193,11 +199,12 @@ public class Calculator {
 		if (i == 0.0) {
 			throw new IllegalArgumentException("Argument 'Current' is 0");
 		}
+		System.out.println("Calculate R from U and I");
 		return u / i;
 	}
 
 	/**
-	 * Calculate R=P/I^2
+	 * Calculate R from P and I
 	 * 
 	 * @param p Power
 	 * @param i Current
@@ -208,11 +215,12 @@ public class Calculator {
 		if (i == 0.0) {
 			throw new IllegalArgumentException("Argument 'Current' is 0");
 		}
+		System.out.println("Calculate R from P and I");
 		return p / i / i;
 	}
 
 	/**
-	 * Calculate R=U*U/P
+	 * Calculate R from U and P
 	 * 
 	 * @param p Power
 	 * @param u Tension
@@ -223,6 +231,7 @@ public class Calculator {
 		if (p == 0.0) {
 			throw new IllegalArgumentException("Argument 'Power' is 0");
 		}
+		System.out.println("Calculate R from U and P");
 		return u * u / p;
 	}
 
@@ -238,6 +247,7 @@ public class Calculator {
 		if (u == 0.0) {
 			throw new IllegalArgumentException("Argument 'Tension' is 0");
 		}
+		System.out.println("Calculate I from P and U");
 		return p / u;
 	}
 
@@ -255,6 +265,7 @@ public class Calculator {
 		} else if ((p / r) < 0.0) {
 			throw new IllegalArgumentException("Argument 'Power/Resistance' is < 0");
 		}
+		System.out.println("Calcluate I from P and R");
 		return Math.sqrt(p / r);
 	}
 
@@ -270,6 +281,7 @@ public class Calculator {
 		if (r == 0.0) {
 			throw new IllegalArgumentException("Argument 'Resistance' is 0");
 		}
+		System.out.println("calculate i from u and r");
 		return u / r;
 	}
 
