@@ -8,9 +8,6 @@ import javafx.scene.control.Alert.AlertType;
  * 
 <<<<<<< HEAD
  * @author Peter Rutschmann, Joel Wäger, Sara Ott
-=======
- * @author Peter Rutschmann, Joel WÃ¤ger, Sara Ott
->>>>>>> feature-Fra-resetButton
  * @version 13.09.2018
  */
 public class Calculator {

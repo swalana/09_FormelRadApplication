@@ -26,6 +26,15 @@ public class Main extends Application {
         try {
             Pane root = new Pane();
 
+            Image image = new Image(new FileInputStream("bin\\application\\formelradelektronik.gif"));
+            ImageView imageView = new ImageView(image);
+            imageView.setX(10);
+            imageView.setY(10);
+            imageView.setFitHeight(300);
+            imageView.setFitWidth(300);
+            imageView.setPreserveRatio(true);
+            root.getChildren().add(imageView);
+
             Label lbleistung = new Label("Leistung:");
             lbleistung.relocate(10, 285);
             lbleistung.setFont(Font.font(15));
