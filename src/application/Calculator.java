@@ -6,7 +6,11 @@ import javafx.scene.control.Alert.AlertType;
 /**
  * Berechnet das Formelrad
  * 
- * @author Peter Rutschmann, Joel W�ger, Sara Ott
+<<<<<<< HEAD
+ * @author Peter Rutschmann, Joel Wäger, Sara Ott
+=======
+ * @author Peter Rutschmann, Joel WÃ¤ger, Sara Ott
+>>>>>>> feature-Fra-resetButton
  * @version 13.09.2018
  */
 public class Calculator {
